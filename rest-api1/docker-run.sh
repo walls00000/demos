@@ -18,22 +18,14 @@ warn() {
 usage() {
   cat << FIN
 ############################################################
-## docker-run.sh run a docker container interactively with
-## all necessary environment variables to run e2e tests
+## docker-run.sh run a docker container interactively 
 ##
-## provide a command argument to run, such as "yarn e2e" to 
-## run all e2e tests in the container or "/bin/bash -l" to drop
+## provide a command argument to run, such as "/bin/bash -l" to drop
 ## into an interactive bash shell.  For example:
 ##
-## ./docker-run.sh yarn e2e
 ## ./docker-run.sh /bin/bash -l
 ##
-## set the ENV environment variable to specify a specific
-## environment. This will be used to determine which .env
-## file  to use.  If not set the file .env will be used
-## export ENV=dev|qa|stg
-
-## This file can also be sourced to export AWS parameters
+## This file can also be sourced to export ENV variables 
 ## into the current shell as environment variables once:
 ##
 ## source ./docker-run.sh
