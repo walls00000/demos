@@ -1,0 +1,12 @@
+version: "3"
+services:
+    server:
+        image: ubuntu
+        ports:
+            - 8443:8443
+    client:
+        image: ubuntu
+        depends_on:
+            - "server"
+        command: 
+            /bin/bash -l
