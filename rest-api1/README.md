@@ -16,22 +16,6 @@ setup a netcat listener to listen on the telnet port (23)
 nc -l 23
 ```
 
-## Hacker (White hat hacker)
-
-In a separate terminal use ssh to login to the client and perform the following
-
-```
-source ./docker-run.sh
-export PROMPT=hacker
-run /bin/bash -l
-```
-
-Listen on an interface in promiscuous mode: "snoop on the wire" (on port 23)
-
-```
-tcpdump -i eth0 port 23 -w out.pcap
-```
-
 ## Client
 
 In a separate terminal perform the following
@@ -46,6 +30,22 @@ start up an ssh server
 
 ```
 service ssh start
+```
+
+## Hacker (White hat hacker)
+
+In a separate terminal use ssh to login to the client and perform the following
+
+```
+source ./docker-run.sh
+export PROMPT=hacker
+run /bin/bash -l
+```
+
+Listen on an interface in promiscuous mode: "snoop on the wire" (on port 23)
+
+```
+tcpdump -i eth0 port 23 -w out.pcap
 ```
 
 using another terminal, login with ssh
